@@ -15,12 +15,6 @@ def generar_matriz_aleatoria(n: int) -> list:
 
     Post:
         Matriz de tamaño N x N con números únicos en [0, N^2).
-
-    Args:
-        n (int): Tamaño de la matriz.
-
-    Returns:
-        matriz (list): Matriz generada.
     """
     numeros = list(range(n**2))  # Crea una lista con los números únicos
     random.shuffle(numeros)       # Baraja los números para aleatorizarlos
@@ -31,13 +25,14 @@ def imprimir_matriz(matriz: list) -> None:
     """
     Imprime una matriz en formato de tabla.
 
-    Args:
-        matriz (list): Matriz a imprimir.
     """
     for fila in matriz:
         print(" ".join(str(elemento) for elemento in fila))
 
 def main() -> None:
+    """    
+    Funcion principal del programa
+    """
     n = int(input("Ingrese el tamaño de la matriz (N): "))
     matriz = generar_matriz_aleatoria(n)
     imprimir_matriz(matriz)
